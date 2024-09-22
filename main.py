@@ -14,17 +14,19 @@ def game():
         is_over = False
         while is_over == False and attempt > 0:
             print(f"You have {attempt} left")
-            guess = int(input("Make a guess: "))
-
-            if guess > num:
-                print("Too high.\nGuess again.")
-                attempt -= 1
-            elif guess < num:
-                print("Too low.\nGuess again.")
-                attempt -= 1
-            elif guess == num:
-                print(f"You win. The number is {num}")  
-                is_over = True 
+            try:
+                guess = int(input("Make a guess: "))
+                if guess > num:
+                    print("Too high.\nGuess again.")
+                    attempt -= 1
+                elif guess < num:
+                    print("Too low.\nGuess again.")
+                    attempt -= 1
+                elif guess == num:
+                    print(f"You win. The number is {num}")  
+                    is_over = True 
+            except:
+                print("Enter a valid number.")        
         if attempt == 0:
             print(f"You loose. You have {attempt} attempt left.")
             is_over = True
@@ -42,17 +44,20 @@ def game():
         is_over = False
         while is_over == False and attempt > 0:
             print(f"You have {attempt} left")
-            guess = int(input("Make a guess: "))
+            try:
+                guess = int(input("Make a guess: "))
 
-            if guess > num:
-                print("Too high.\nGuess again.")
-                attempt -= 1
-            elif guess < num:
-                print("Too low.\nGuess again.")
-                attempt -= 1
-            elif guess == num:
-                print(f"You win. The number is {num}")  
-                is_over = True 
+                if guess > num:
+                    print("Too high.\nGuess again.")
+                    attempt -= 1
+                elif guess < num:
+                    print("Too low.\nGuess again.")
+                    attempt -= 1
+                elif guess == num:
+                    print(f"You win. The number is {num}")  
+                    is_over = True 
+            except:
+                print("Enter a valid number.")        
         if attempt == 0:
             print(f"You loose. You have {attempt} attempt left.")
             is_over = True
